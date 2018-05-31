@@ -2,7 +2,16 @@
 public class OhReynoldsMacLellanGreedStrategy extends GreedStrategy{
 	
 	public int choose(GreedOption[] options, int[] dice, int bank) {
-		return 1;
+		if (options.length == 2) {
+			if ((dice.length > 3) || (dice.length == 0))
+				return 1;
+		else
+			if (bank < 300)
+				return 1;
+			else
+				return 0;
+		else
+			return 2;
 	}
 
 	@Override
